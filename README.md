@@ -1,0 +1,2 @@
+# Easy_comfyui
+Comfyui_Configured_with_venv
