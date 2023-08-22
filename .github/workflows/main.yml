@@ -1,0 +1,26 @@
+name: Update Submodules Daily
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # This will run the action every day at midnight
+
+jobs:
+  update-submodules:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
+
+    - name: Update submodules
+      run: |
+        git config user.name "shiyk92"
+        git config user.email "2698112310@qq.com"
+        git submodule update --remote
+        git add .
+        git commit -m "Updated submodules"
+        git push
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
