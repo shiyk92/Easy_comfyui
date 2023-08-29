@@ -21,7 +21,7 @@ jobs:
         git submodule update --remote
         git add .
         git commit -m "Updated submodules"
-        git push https://${{ secrets.GH_TOKEN }}@github.com/shiyk92/Easy_comfyui.git
+        git push https://${{ secrets.GH_PAT }}@github.com/shiyk92/Easy_comfyui.git
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_PAT }}
 
